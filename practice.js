@@ -19,7 +19,9 @@ var arr = [10,20,30];
 
 //Code Here
 
-
+function first(arr){
+  return arr[0];
+}
 
 ////////// PROBLEM 2 //////////
 
@@ -49,7 +51,11 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 
 //Code Here
 
-
+function looper(family){
+  for(var i = 0; i < family.length; i++){
+    alert(family[i]);
+  }
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -79,7 +85,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 
 //Code Here
 
-
+function evenFinder(nums){
+  var newArr = [];
+  for (var i = 0; i < nums.length; i++){
+    if (nums[i] % 2 === 0){
+      newArr.push(nums[i]);
+    }
+  }
+  return newArr;
+}
 
 ////////// EXTRA PRACTICE PROBLEMS BELOW //////////
 
@@ -117,7 +131,17 @@ var getRandomArbitrary = function() {
 
 //Code Here
 
+function finder(numbers){
+  var random = getRandomArbitrary();
+  for (var i = 0; i < numbers.length; i++){
+    if (numbers[i] === random){
+      return true;
+    }
+  }
+  return false;
+}
 
+console.log(finder([0,3,4,5,6,7,9,14,17,24,25,26,29,30]));
 
 ////////// PROBLEM 8 //////////
 
@@ -154,7 +178,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 
-
+function maker(){
+  var arr = [];
+  for(var i = 1; i <= 215; i++){
+    arr.push(i);
+  }
+  return arr;
+}
 
 ////////// PROBLEM 10 //////////
 
