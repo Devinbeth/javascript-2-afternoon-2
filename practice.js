@@ -36,7 +36,9 @@ var arr = [40,50,60];
 
 //Code Here
 
-
+function last(arr){
+  return arr[arr.length - 1];
+}
 
 ////////// PROBLEM 3 //////////
 
@@ -70,7 +72,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 
 //Code Here
 
-
+function reversedLooper(letters){
+  for(var i = letters.length - 1; i >= 0 ; i--){
+    alert(letters[i]);
+  }
+}
 
 ////////// PROBLEM 5 //////////
 
@@ -110,7 +116,18 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 //Code Here
 
-
+function divider(numbersArray){
+  var arr = [[],[]];
+  for(var i = 0; i < numbersArray.length; i++){
+    if(numbersArray[i] % 2 === 0){
+      arr[0].push(numbersArray[i]); 
+    }
+    else{
+      arr[1].push(numbersArray[i]);
+    }
+  }
+  return arr;
+}
 
 ////////// PROBLEM 7 //////////
 
@@ -168,7 +185,18 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 
+function removeItem(myGroceryList, item){
+  if(myGroceryList.includes(item)){
+    var index = myGroceryList.indexOf(item);
+    myGroceryList.splice(index, 1);
+  }
+  return myGroceryList;
+}
 
+function addItem(myGroceryList, item){
+  myGroceryList.push(item);
+  return myGroceryList;
+}
 
 ////////// PROBLEM 9 //////////
 
@@ -200,7 +228,13 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   
 //Code Here
 
-
+function addTen(numbers){
+  var arr = [];
+  for(var index of numbers){
+    arr.push(Number(index) + 10);
+  }
+  return arr;
+}
 
 ////////// PROBLEM 11 //////////
 
@@ -225,7 +259,9 @@ for(var i = 0; i < num2; i++){
 
 //Code Here
 
-
+function longer(arr1, arr2){
+  return arr1.length > arr2.length ? arr1 : arr2;
+}
 
 /*
   As a continuation of the previous problem, write another function called 'both'.
@@ -237,7 +273,18 @@ for(var i = 0; i < num2; i++){
 
 //Code Here
 
-
+function both(arr1, arr2){
+  var arr3 = [];
+  for(var i = 0; i < arr1.length; i++){
+    for(var j = 0; j < arr2.length; j++){
+      if(arr1[i] === arr2[j]){
+        arr3.push(arr1[i]);
+        break;
+      }
+    }
+  }
+  return arr3;
+}
 
 ////////// PROBLEM 12 //////////
 
@@ -277,7 +324,7 @@ var colt = {
 
 //Code Here
 
-
+devMountainEmployees.push(tyler, cahlan, ryan, colt);
 
 /*
   Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
@@ -286,7 +333,8 @@ var colt = {
 
 //Code Here
 
-
+var index = devMountainEmployees.indexOf(cahlan);
+devMountainEmployees.splice(index, 1);
 
 ////////// PROBLEM 13 //////////
 
@@ -298,7 +346,7 @@ var colt = {
 
 //Code Here
 
-
+var users = [];
 
 /*
   Now add three user objects to your users array. Each user object should contain the following properties. name, email, password, username.
@@ -317,8 +365,29 @@ var user1 = {
 
 //Code Here
 
+var user2 = {
+  name: 'Devin',
+  email: 'devinbeth@gmail.com',
+  password: 'password',
+  username: 'Devinbeth'
+};
 
+var user3 = {
+  name: 'Marcus',
+  email: 'test@gmail.com',
+  password: '12345',
+  username: 'Marcus'
+};
 
+var user4 = {
+  name: 'Test',
+  email: 'test2@gmail.com',
+  password: '123456',
+  username: 'Test'
+};
+
+users.push(user1, user2, user3, user4);
+console.log(users);
 /*
   Now you have a very common data structure. 
   Twitter is a good use case.
@@ -331,6 +400,11 @@ var user1 = {
 
 //Code Here
 
+for(var i = 0; i < users.length; i++){
+  if(users[i].email === 'tylermcginnis33@gmail.com'){
+    users.splice(i, 1);
+  }
+}
 
 
 /*
